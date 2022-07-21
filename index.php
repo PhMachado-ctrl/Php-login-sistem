@@ -12,6 +12,13 @@
     <?php
         //se não existir uma sessão çogin
         if(!isset($_SESSION['login'])){
+            if(isset($_POST['acao'])){
+                $login = 'guilherme';
+                $senha = '123456';
+
+                $loginForm = $_POST['login'];
+                $senhaForm = $_POST['senha'];
+            }
             include('login.php');
         }else{
             include('home.php');
