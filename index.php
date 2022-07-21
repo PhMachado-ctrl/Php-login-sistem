@@ -22,6 +22,7 @@
                 if($login == $loginForm && $senha == $senhaForm){
                     //Logado com sucesso
                     $_SESSION['login'] = true;
+                    header('Location: index.php');
                 }else {
                     //Algum erro ocorreu
                     echo 'Dados inválidos.';
