@@ -18,6 +18,14 @@
 
                 $loginForm = $_POST['login'];
                 $senhaForm = $_POST['senha'];
+
+                if($login == $loginForm && $senha == $senhaForm){
+                    //Logado com sucesso
+                    $_SESSION['login'] = true;
+                }else {
+                    //Algum erro ocorreu
+                    echo 'Dados inválidos.';
+                }
             }
             include('login.php');
         }else{
