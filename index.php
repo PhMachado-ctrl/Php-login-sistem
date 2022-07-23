@@ -21,7 +21,7 @@
 
                 if($login == $loginForm && $senha == $senhaForm){
                     //Logado com sucesso
-                    $_SESSION['login'] = true;
+                    $_SESSION['login'] = $login;
                     header('Location: index.php');
                 }else {
                     //Algum erro ocorreu
@@ -30,6 +30,9 @@
             }
             include('login.php');
         }else{
+            if(isset($_GET['logout'])){
+                unset($_SESSION['login']);
+            }
             include('home.php');
         }
     ?>
